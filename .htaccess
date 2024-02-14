@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Permet de gérer la navigation avec React Router
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.html [L]
+
+  # Permet d'activer le chargement des polices, images, etc. depuis le dossier public
+  RewriteCond %{REQUEST_URI} !\.(jpg|jpeg|png|gif|ico|svg|eot|ttf|woff|woff2)$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.html [L]
+</IfModule>
