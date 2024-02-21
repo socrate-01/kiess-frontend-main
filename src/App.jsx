@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion"
+import CookieConsent from './components/CookieConsent';
+
 
 // Assets import
 import "./App.css";
@@ -27,6 +29,7 @@ function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/conditions" element={<Conditions />} />
       </Routes>
+      <CookieConsent />
       </motion.div>
     </Router>
   );
